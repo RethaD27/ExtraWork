@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </div>
+    <p>I am a p tag outside of a div</p>
+    <div>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="https://www.codespace.co.za/">This link goes to CodeSpace</a>
+
+      <div>
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="input-field"
+          placeholder="input field for the exercise"
+        />
+        <h3>Change subtitle color</h3>
+        <input type="color" class="color-field" />
+      </div>
+    </div>
+
+    <div>
+      <p>And this text is just for the exercise too!</p>
+      <h2 style="color: red">This text is a footer!</h2>
+    </div>
+
+    <script async type="module">
+      function rcg() {
+        // Concept: random color generator, can be used in exercises further down
+        return "#" + (((1 << 24) * Math.random()) | 0).toString(16);
+      }
+
+      /* EXERCISE 1
+           Write a function for changing the title of the document into something else.
+          */
+
+      let title = document.getElementsByTagName("h1")[0];
+
+      function changeTitle() {
+        title.innerText = "Something else";
+      }
+      changeTitle();
+
+      /* EXERCISE 2
+           Write a function for changing the class of the title of the page in "myHeading".
+          */
+
+      function addClassToTitle() {
+        title.classList.add("myHeading");
+      }
+      addClassToTitle();
+
+      /* EXERCISE 3
+           Write a function for changing the text of only the p which are children of a div.
+          */
+
+      function changeTextOfPs() {
+        let listOfPTags = document.querySelectorAll("div p");
+        for (let pTag of listOfPTags) {
+          pTag.innerText = "Blah blah";
+        }
+      }
+
+      /* A good alternative to the for...of loop is using the for each loop, which includes using arrow functions.
+         function changeTextOfPs() {
+            let listOfPTags = document.querySelectorAll("div p");
+            listOfPTags.forEach(pTag => pTag.textContent = "Blah blah");
+            }
+
+       */
+
+      changeTextOfPs();
+
+      /* EXERCISE 4
+           Write a function for changing the href property of every link to https://www.google.com
+           Hint: for...of or for each loop
+          */
+
+      /* EXERCISE 5
+           Write a function for adding a new list item in the second unordered list.
+           Hint: You will need to create a new element and use the appendChild method
+          */
+
+      /* EXERCISE 6
+           Write a function for adding a second paragraph to the first div.
+           Hint: You will need to create a new element and use the appendChild method
+          */
+
+      /* EXERCISE 7
+           Write a function for making the first unordered list disappear.
+           Hint: You can alter the style of the list (style.display), or the remove method
+          */
+
+      /* EXERCISE 8
+           Write a function for making the background of every unordered list green.
+           Hint: for...of or for each loop
+          */
+
+      /* EXERCISE 9
+           Make the heading of the page change color every time the user clicks on it.
+          */
+
+      /* EXERCISE 10
+           Change the footer text with something else when the user clicks on it.
+           Hint: add an event listener to the footer element (you can use the random colour generator function here!)
+          */
+
+      /* EXERCISE 11
+           Attach an event listener to the input field in the page that changes the text of the page's subtitle
+           Hint: We need an event listener here too
+          */
+
+      // ...
+
+      /* EXERCISE 12
+               Create a welcome alert message when the page successfully loads.
+               Hint: window.onload is the event listener we want for this exercise
+          */
+
+      /* ### EXTRA ###  EXERCISE 13
+           Create an input of type "color" and use it to change the color of the subtitle
+           Hint: Need an event listener here, and we can use the 'this' keyword within that function to change the colour
+          */
+    </script>
+  </body>
+</html>
